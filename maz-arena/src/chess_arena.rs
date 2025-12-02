@@ -212,8 +212,8 @@ pub fn run_arena_chess(
     );
 
     let oracle = match TriHexEndgameOracle::new(
-        "./tablebases/kqk_tablebase.bin",
-        "./tablebases/krk_tablebase.bin",
+        "./game/oracle-tri-chess/tablebases/kqk_tablebase.bin",
+        "./game/oracle-tri-chess/tablebases/krk_tablebase.bin",
     ) {
         Ok(oracle) => Some(Arc::new(oracle)),
         Err(e) => {

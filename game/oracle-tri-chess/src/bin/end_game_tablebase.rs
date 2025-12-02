@@ -16,8 +16,8 @@ fn main() {
     let endgame_to_generate = Endgame::Kqk;
 
     let (strong_piece, output_file) = match endgame_to_generate {
-        Endgame::Kqk => (Piece::Queen, "kqk_tablebase.bin"),
-        Endgame::Krk => (Piece::Rook, "krk_tablebase.bin"),
+        Endgame::Kqk => (Piece::Queen, "game/oracle-tri-chess/tablebases/kqk_tablebase.bin"),
+        Endgame::Krk => (Piece::Rook, "game/oracle-tri-chess/tablebases/krk_tablebase.bin"),
     };
 
     println!("Starting {:?} tablebase generation...", endgame_to_generate);
