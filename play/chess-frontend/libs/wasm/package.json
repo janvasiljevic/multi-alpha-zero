@@ -1,0 +1,17 @@
+{
+  "name": "game-tri-chess",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "tri-hex-chess_bg.wasm",
+    "tri-hex-chess.js",
+    "tri-hex-chess_bg.js",
+    "tri-hex-chess.d.ts"
+  ],
+  "main": "tri-hex-chess.js",
+  "types": "tri-hex-chess.d.ts",
+  "sideEffects": [
+    "./tri-hex-chess.js",
+    "./snippets/*"
+  ]
+}

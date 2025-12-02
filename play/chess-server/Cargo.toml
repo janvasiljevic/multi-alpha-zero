@@ -1,0 +1,33 @@
+[package]
+name = "chess-server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+maz-util.workspace = true
+maz-core.workspace = true
+game-tri-chess = { workspace = true, features = ["serde_support"] }
+maz-trainer.workspace = true
+
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+uuid.workspace = true
+rand.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+ort.workspace = true
+schemars.workspace = true
+ndarray.workspace = true
+
+axum = { version = "0.8.1", features = ["macros"] }
+aide = { version = "0.15.0", features = [
+    "redoc",
+    "swagger",
+    "scalar",
+    "axum-json",
+    "macros",
+] }
+tower-http = { version = "0.6.6", features = ["cors"] }
+is = "0.6.0"
+log = "0.4.27"

@@ -1,0 +1,59 @@
+[package]
+name = "maz-trainer"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+maz-core.workspace = true
+maz-util.workspace = true
+game-hex.workspace = true
+game-tri-chess.workspace = true
+oracle-tri-chess.workspace = true
+
+# TODO: Check if this can be refactored after we refactor maz-trainer
+maz-config = { path = "../maz-config" }
+
+ahash.workspace = true
+ort.workspace = true
+decorum.workspace = true
+ndarray.workspace = true
+itertools.workspace = true
+rand_distr.workspace = true
+rand.workspace = true
+parquet.workspace = true
+arrow.workspace = true
+tracing.workspace = true
+tokio.workspace = true
+bon.workspace = true
+serde.workspace = true
+quick_cache.workspace = true
+thiserror.workspace = true
+csv.workspace = true
+clap.workspace = true
+half.workspace = true
+anyhow.workspace = true
+
+tonic = "0.14.0"
+prost = "0.14.0"
+tonic-prost = "0.14.0"
+serde_yaml.workspace = true
+crossbeam-channel = "0.5.15"
+num-traits = "0.2"
+fastrand = "2.3.0"
+num_cpus = "1.17.0"
+log = "0.4.27"
+tempfile = "3.21.0"
+rayon = "1.11.0"
+
+[build-dependencies]
+tonic-prost-build = "0.14.0"
+
+[target.'cfg(not(target_env = "msvc"))'.dependencies]
+tikv-jemallocator = { version = "0.6.0", features = [
+    "unprefixed_malloc_on_supported_platforms",
+] }
+
+
+[[bin]]
+name = "analyze_openings"
+path = "src/bin/analyze_openings.rs"

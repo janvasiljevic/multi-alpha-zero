@@ -1,0 +1,43 @@
+# Builds the WASM package for the dev UI. The repository must be a sibling of the core repository.
+build-wasm-dev:
+    @if [ ! -d "./../tri-hex-chess-dev-ui" ]; then \
+        echo "tri-hex-chess-dev-ui not found"; \
+        exit 1; \
+    fi
+    wasm-pack build --debug --out-name tri_hex_chess --out-dir ./../tri-hex-chess-dev-ui/pkg -- --features wasm
+
+
+folder_server:= "./../../../tri-hex-chess-libs/wasm"
+folder_fe:= "./../../../tri-hex-chess-libs/js"
+folder_wasm_web:= "./../../../tri-hex-chess-libs/web"
+
+build-all: build-wasm-server wasm-web build-wasm-2-js
+build-minus-wasm-2-js: build-wasm-server wasm-web
+
+# Builds the WASM package for NodeJS/Web use.
+build-wasm-server:
+    @[ -d {{folder_server}} ] || { echo "{{folder_server}} not found"; exit 1; }
+    wasm-pack build --target nodejs --out-name tri-hex-chess --out-dir {{folder_server}} -- --features wasm
+    rm {{folder_server}}/.gitignore
+
+# Builds the WASM package for Web use.
+wasm-web:
+    @[ -d {{folder_wasm_web}} ] || { echo "{{folder_wasm_web}} not found"; exit 1; }
+    wasm-pack build  --out-name tri-hex-chess --out-dir {{folder_wasm_web}} -- --features wasm
+    rm {{folder_wasm_web}}/.gitignore
+
+# Builds the WASM package for Expo use (using wasm2js).
+build-wasm-2-js:
+    @[ -d {{folder_fe}} ] || { echo "{{folder_fe}} not found"; exit 1; }
+    @wasm-pack build --target bundler --out-name tri-hex-chess --out-dir {{folder_fe}} -- --features wasm
+    wasm2js {{folder_fe}}/tri-hex-chess_bg.wasm -Os -o {{folder_fe}}/tri-hex-chess.wasm.js
+    sed -i '' 's/tri-hex-chess_bg.wasm/tri-hex-chess.wasm.js/g' {{folder_fe}}/tri-hex-chess.js {{folder_fe}}/package.json
+    @echo 'gzipped wasm size: '$(gzip -c {{folder_fe}}/tri-hex-chess_bg.wasm | wc -c)' bytes'
+    @echo 'size: '$(wc -c {{folder_fe}}/tri-hex-chess.wasm.js | awk '{print $1}')' bytes'
+    @echo 'gzip size: '$(gzip -c {{folder_fe}}/tri-hex-chess.wasm.js | wc -c)' bytes'
+    rm {{folder_fe}}/.gitignore {{folder_fe}}/tri-hex-chess_bg.wasm {{folder_fe}}/tri-hex-chess_bg.wasm.d.ts
+
+
+commit-libs:
+    cd ./../../../tri-hex-chess-libs && git add . && git commit -m "Update" && git push
+    

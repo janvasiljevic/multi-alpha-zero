@@ -1,0 +1,6 @@
+out_dir := `echo $(pwd)/libs/wasm`
+
+wasm-web:
+    echo out_dir is {{out_dir}}
+    cd ./../../game/game-tri-chess && RUST_LOG=info wasm-pack build --release --out-name tri-hex-chess --out-dir {{out_dir}} -- --features wasm
+    rm {{out_dir}}/.gitignore

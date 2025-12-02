@@ -1,0 +1,133 @@
+.hex-cell {
+    aspect-ratio: cos(30deg);
+    clip-path: polygon(-50% 50%, 50% 100%, 150% 50%, 50% 0);
+    background: #e1e2ef;
+
+
+    position: relative;
+    width: 54px;
+    height: 62.35px; /* height = width * sqrt(3) / 2 * 1.1 */
+    margin: 2px 2px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+
+.hex-cell::after {
+    top: 100%;
+    width: 0;
+    border-top: 16.17px solid;
+    border-top-color: inherit;
+}
+
+.hex-content {
+    position: absolute;
+    top: 50%;
+    left: 125%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    color: #ccc;
+}
+
+.hex-player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #4a515e;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+/* Player Colors (based on your Rust code's colored output) */
+.hex-cell .P1 {
+    background-color: #E74C3C;
+}
+
+/* Red */
+.hex-cell .P2 {
+    background-color: #3498DB;
+}
+
+/* Blue */
+.hex-cell .P3 {
+    background-color: #decf8c;
+}
+
+/* Yellow */
+.hex-cell .empty {
+    background-color: #5a616d;
+}
+
+.hex-cell .eliminated {
+    opacity: 0.3;
+}
+
+/* Interactivity for Empty Cells */
+.hex-cell.empty:hover {
+    background-color: #7d8594;
+    cursor: pointer;
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.line {
+    width: 5px;
+    height: 100px;
+    position: absolute;
+    margin: auto auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.line-p1-start {
+    transform: translate(0%, -50%) rotate(-90deg);
+    background-color: #E74C3C;
+    bottom: unset;
+}
+
+.line-p1-end {
+    transform: translate(0%, 65%) rotate(-90deg);
+    background-color: #E74C3C;
+    top: unset;
+}
+
+.line-p2-start {
+    transform: translate(0%, -100%) rotate(150deg);
+    background-color: #decf8c;
+    left: unset;
+    right: 30px;
+}
+
+.line-p2-end {
+    transform: translate(0%, 110%) rotate(-30deg);
+    background-color: #decf8c;
+    right: unset;
+    left: 25px;
+}
+
+.line-p3-start {
+    transform: translate(0%, 100%) rotate(30deg);
+    background-color: #3498DB;
+    left: unset;
+    right: 30px;
+}
+
+.line-p3-end {
+    transform: translate(0%, -110%) rotate(-150deg);
+    background-color: #3498DB;
+    right: unset;
+    left: 25px;
+}

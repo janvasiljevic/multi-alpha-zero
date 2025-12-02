@@ -1,0 +1,13 @@
+[package]
+name = "oracle-tri-chess"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+game-tri-chess.workspace = true
+bincode = { version = "2.0.1", features = ["derive", "serde"] }
+serde = { workspace = true, features = ["derive"] }
+
+[[bin]]
+name = "end_game_tablebase"
+path = "src/bin/end_game_tablebase.rs"

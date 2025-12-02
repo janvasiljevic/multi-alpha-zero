@@ -1,0 +1,31 @@
+# $schema: ./arena-config.schema.json
+# yaml-language-server: $schema=./arena-config.schema.json
+# This config is meant for local testing on the Mac M2 for development purposes.
+
+sessions_per_gpu: 3
+configs:
+  - game: Chess
+    out_file: ./maz-arena/results/chess_3_player.csv
+    games_per_matchup: 7
+    config_unique_name: chess_3_player
+    mcts_rollouts_per_move: 600
+    initial_elo: 25.0
+    players:
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/ChessDomain32/ChessDomain_50.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/ChessDomain32/ChessDomain_100.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/ChessDomain32/ChessDomain_150.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/ChessDomain32/ChessDomain_200.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/ChessDomain32/ChessDomain_250.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/ChessDomain32/ChessDomain_300.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/ChessDomain32/ChessDomain_350.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/ChessDomain32/ChessDomain_400.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/ChessDomain32/ChessDomain_440.onnx"

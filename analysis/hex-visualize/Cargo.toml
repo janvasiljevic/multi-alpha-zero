@@ -1,0 +1,38 @@
+[package]
+name = "hex-visualize"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+analysis-util.workspace = true
+game-hex.workspace = true
+maz-core.workspace = true
+maz-util.workspace = true
+ort.workspace = true
+maz-trainer.workspace = true
+ndarray.workspace = true
+svg = "0.18.0"
+usvg = { version = "0.45.1", features = ["fontdb", "text"] }
+fontdb = "0.23.0"
+svg2pdf = "0.13.0"
+roxmltree = "0.20.0"
+lazy_static = "1.5.0"                                        # Add this for parsing piece SVGs
+rand.workspace = true
+colorgrad.workspace = true
+image = "0.25.8"
+
+[[bin]]
+name = "hex-analyze-parquet-fle"
+path = "src/bin/hex_analyze_parquet_fle.rs"
+
+[[bin]]
+name = "vis-hex-demos"
+path = "src/bin/vis_hex_demos.rs"
+
+[[bin]]
+name = "vis-hex-networks"
+path = "src/bin/vis_hex_networks.rs"
+
+[[bin]]
+name = "vis-hex-input-repr"
+path = "src/bin/vis_hex_input_repr.rs"

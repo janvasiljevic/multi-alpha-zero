@@ -1,0 +1,8 @@
+output-dir: "{cwd}/api"
+emit:
+  - "@typespec/openapi3"
+options:
+  "@typespec/openapi3":
+    emitter-output-dir: "{cwd}/api/schema"
+    openapi-versions: ["3.1.0"]
+    file-type: json

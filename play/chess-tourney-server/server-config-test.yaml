@@ -1,0 +1,10 @@
+# $schema: ./server.schema.json
+# yaml-language-server: $schema=./server.schema.json
+
+database_file_path: ./sqlite.db
+host: localhost
+port: 3000
+
+onnx_models:
+  - file_path: ./testing/play/ChessDomain32/ChessDomain_850.onnx
+    key: testing

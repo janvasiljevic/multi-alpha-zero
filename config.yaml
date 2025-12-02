@@ -1,0 +1,79 @@
+# $schema: ./config.schema.json
+# yaml-language-server: $schema=./config.schema.json
+
+# This is an example configuration file.
+# All the parameters are explained in the config.schema.json file.base_dir:
+# Use a language server that supports JSON schema to see the documentation for each parameter.
+
+game:
+  name: Hex4Canonical
+
+standalone: false
+
+number_of_cycles: 300
+
+run_name: example_run
+
+overwrite_run: true
+
+performance:
+  cpu_generator_threads: 6
+  games_per_cpu_generator: 30
+  cache_size: 100000
+  gpu_batch_size: 16
+  cache_writers: 3
+  gpu:
+    type: Dummy
+    inferences_per_second: 25000
+    num_of_gpus: 2
+
+cycle_collection:
+  max_time_per_cycle_s: null
+  min_samples_per_cycle: 30000
+  min_games_per_cycle: 200
+
+training:
+  number_of_aux_features: 0
+  warmup_steps: 300
+  samples: 50000
+  batch_size: 256
+  epochs: 1
+  learning_rate: 0.0005
+  policy_loss_weight: 1.0
+  q_value_loss_weight: 2.0
+  z_value_loss_weight: 0.0
+  weight_decay: 0.001
+
+self_play_settings:
+  contempt: 0.0
+  rollouts:
+    full_search_prob: 0.25
+    full_iterations: 200
+    part_iterations: 50
+
+  search_policy_temperature_child: 1.0
+  search_policy_temperature_root: 1.0
+
+  dirichlet:
+    alpha: 0.20
+    eps: 0.25
+
+  max_game_length: 200
+
+  search_fpu_child:
+    type: Fixed
+    fixed: 0.0
+
+  search_fpu_root:
+    type: Fixed
+    fixed: 0.0
+
+  move_selection:
+    temperature: 1.0
+    zero_temp_move_count: 20
+
+  uct:
+    exploration_weight: 3.5
+    moves_left_clip: 20.0
+    moves_left_sharpness: 0.5
+    moves_left_weight: 0.00

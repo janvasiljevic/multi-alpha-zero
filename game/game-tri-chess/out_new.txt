@@ -1,0 +1,962 @@
+print-type-size type: `chess_zobrist::ZobristTableChess`: 14664 bytes, alignment: 8 bytes
+print-type-size     field `.pieces`: 13824 bytes
+print-type-size     field `.en_passant`: 768 bytes
+print-type-size     field `.castling`: 48 bytes
+print-type-size     field `.turn`: 24 bytes
+print-type-size type: `moves::MoveStoreIntoIter`: 1560 bytes, alignment: 8 bytes
+print-type-size     field `.index`: 8 bytes
+print-type-size     field `.store`: 1548 bytes
+print-type-size     end padding: 4 bytes
+print-type-size type: `moves::ChessMoveStore`: 1548 bytes, alignment: 2 bytes
+print-type-size     field `.list`: 1536 bytes
+print-type-size     field `.count`: 2 bytes
+print-type-size     field `.capacity`: 2 bytes
+print-type-size     field `.turn_cache`: 7 bytes
+print-type-size     end padding: 1 bytes
+print-type-size type: `chess_game::TriHexChess`: 376 bytes, alignment: 8 bytes
+print-type-size     field `.repetition_history`: 256 bytes
+print-type-size     field `.zobrist_hash`: 8 bytes
+print-type-size     field `.state`: 110 bytes
+print-type-size     field `.is_using_grace_period`: 1 bytes
+print-type-size     end padding: 1 bytes
+print-type-size type: `std::result::Result<chess_game::TriHexChess, std::string::String>`: 376 bytes, alignment: 8 bytes
+print-type-size     variant `Ok`: 376 bytes
+print-type-size         field `.0`: 376 bytes
+print-type-size     variant `Err`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size type: `chess_game_attack_bb::PerPieceBitboardAttackData`: 304 bytes, alignment: 16 bytes
+print-type-size     field `.attacks`: 288 bytes
+print-type-size     field `.is_in_check`: 3 bytes
+print-type-size     end padding: 13 bytes
+print-type-size type: `repetition_history::RepetitionHistory`: 256 bytes, alignment: 8 bytes
+print-type-size     field `.hashes`: 256 bytes
+print-type-size type: `chess_game::State`: 110 bytes, alignment: 2 bytes
+print-type-size     field `.en_passant`: 6 bytes
+print-type-size     field `.phase`: 2 bytes
+print-type-size     field `.buffer`: 96 bytes
+print-type-size     field `.third_move`: 2 bytes
+print-type-size     field `.turn_counter`: 2 bytes
+print-type-size     field `.castle`: 1 bytes
+print-type-size     end padding: 1 bytes
+print-type-size type: `basics::MemoryBuffer`: 96 bytes, alignment: 1 bytes
+print-type-size     field `.0`: 96 bytes
+print-type-size type: `std::array::IntoIter<(i8, i8, i8), 12>`: 56 bytes, alignment: 8 bytes
+print-type-size     field `.inner`: 56 bytes
+print-type-size type: `std::array::iter::iter_inner::PolymorphicIter<[std::mem::MaybeUninit<(i8, i8, i8)>; 12]>`: 56 bytes, alignment: 8 bytes
+print-type-size     field `.alive`: 16 bytes
+print-type-size     field `.data`: 36 bytes
+print-type-size     end padding: 4 bytes
+print-type-size type: `core::fmt::rt::Placeholder`: 48 bytes, alignment: 8 bytes
+print-type-size     field `.precision`: 16 bytes
+print-type-size     field `.width`: 16 bytes
+print-type-size     field `.position`: 8 bytes
+print-type-size     field `.flags`: 4 bytes
+print-type-size     end padding: 4 bytes
+print-type-size type: `std::fmt::Arguments<'_>`: 48 bytes, alignment: 8 bytes
+print-type-size     field `.pieces`: 16 bytes
+print-type-size     field `.args`: 16 bytes
+print-type-size     field `.fmt`: 16 bytes
+print-type-size type: `std::option::Option<std::fmt::Arguments<'_>>`: 48 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 48 bytes
+print-type-size         field `.0`: 48 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::vec::IntoIter<check_information::CheckInformation>`: 32 bytes, alignment: 8 bytes
+print-type-size     field `.buf`: 8 bytes
+print-type-size     field `.ptr`: 8 bytes
+print-type-size     field `.cap`: 8 bytes
+print-type-size     field `.end`: 8 bytes
+print-type-size     field `.phantom`: 0 bytes
+print-type-size     field `.alloc`: 0 bytes
+print-type-size type: `unwind::libunwind::_Unwind_Exception`: 32 bytes, alignment: 8 bytes
+print-type-size     field `.exception_class`: 8 bytes
+print-type-size     field `.exception_cleanup`: 8 bytes
+print-type-size     field `.private`: 16 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/chess_game.rs:867:86: 867:88}`: 32 bytes, alignment: 8 bytes
+print-type-size     end padding: 32 bytes
+print-type-size type: `std::array::IntoIter<(i8, i8, i8), 2>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.inner`: 24 bytes
+print-type-size type: `std::array::IntoIter<basics::Color, 3>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.inner`: 24 bytes
+print-type-size type: `std::array::IntoIter<basics::Piece, 4>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.inner`: 24 bytes
+print-type-size type: `std::array::iter::iter_inner::PolymorphicIter<[std::mem::MaybeUninit<(i8, i8, i8)>; 2]>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.alive`: 16 bytes
+print-type-size     field `.data`: 6 bytes
+print-type-size     end padding: 2 bytes
+print-type-size type: `std::array::iter::iter_inner::PolymorphicIter<[std::mem::MaybeUninit<basics::Color>; 3]>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.alive`: 16 bytes
+print-type-size     field `.data`: 3 bytes
+print-type-size     end padding: 5 bytes
+print-type-size type: `std::array::iter::iter_inner::PolymorphicIter<[std::mem::MaybeUninit<basics::Piece>; 4]>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.alive`: 16 bytes
+print-type-size     field `.data`: 4 bytes
+print-type-size     end padding: 4 bytes
+print-type-size type: `std::fmt::DebugTuple<'_, '_>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.fields`: 8 bytes
+print-type-size     field `.fmt`: 8 bytes
+print-type-size     field `.result`: 1 bytes
+print-type-size     field `.empty_name`: 1 bytes
+print-type-size     end padding: 6 bytes
+print-type-size type: `std::fmt::Formatter<'_>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.buf`: 16 bytes
+print-type-size     field `.options`: 8 bytes
+print-type-size type: `std::iter::Enumerate<std::slice::Iter<'_, basics::Color>>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.iter`: 16 bytes
+print-type-size     field `.count`: 8 bytes
+print-type-size type: `std::iter::Enumerate<std::slice::Iter<'_, basics::MemorySlot>>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.iter`: 16 bytes
+print-type-size     field `.count`: 8 bytes
+print-type-size type: `std::iter::FilterMap<std::iter::Enumerate<std::slice::Iter<'_, basics::MemorySlot>>, {closure@game/game-tri-chess/src/basics.rs:226:46: 226:58}>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.iter`: 24 bytes
+print-type-size     field `.f`: 0 bytes
+print-type-size type: `std::iter::FilterMap<std::iter::Take<std::slice::Iter<'_, std::option::Option<moves::PseudoLegalMove>>>, for<'a> fn(&'a std::option::Option<moves::PseudoLegalMove>) -> std::option::Option<&'a moves::PseudoLegalMove> {std::option::Option::<moves::PseudoLegalMove>::as_ref}>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.iter`: 24 bytes
+print-type-size     field `.f`: 0 bytes
+print-type-size type: `std::iter::Take<std::slice::Iter<'_, std::option::Option<moves::PseudoLegalMove>>>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.iter`: 16 bytes
+print-type-size     field `.n`: 8 bytes
+print-type-size type: `std::mem::ManuallyDrop<std::vec::Vec<check_information::CheckInformation>>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.value`: 24 bytes
+print-type-size type: `std::ops::ControlFlow<std::result::Result<std::convert::Infallible, std::string::String>, &mut basics::CastleFlags>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Break`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Continue`: 16 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 8 bytes, alignment: 8 bytes
+print-type-size type: `std::ops::ControlFlow<std::result::Result<std::convert::Infallible, std::string::String>, &mut basics::EnPassantState>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Break`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Continue`: 16 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 8 bytes, alignment: 8 bytes
+print-type-size type: `std::ops::ControlFlow<std::result::Result<std::convert::Infallible, std::string::String>, &mut basics::MemoryBuffer>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Break`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Continue`: 16 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 8 bytes, alignment: 8 bytes
+print-type-size type: `std::ops::ControlFlow<std::result::Result<std::convert::Infallible, std::string::String>, &mut phase::Phase>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Break`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Continue`: 16 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 8 bytes, alignment: 8 bytes
+print-type-size type: `std::ops::ControlFlow<std::result::Result<std::convert::Infallible, std::string::String>, &mut u16>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Break`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Continue`: 16 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 8 bytes, alignment: 8 bytes
+print-type-size type: `std::ops::ControlFlow<std::result::Result<std::convert::Infallible, std::string::String>, &str>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Continue`: 24 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 16 bytes, alignment: 8 bytes
+print-type-size     variant `Break`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size type: `std::ops::ControlFlow<std::result::Result<std::convert::Infallible, std::string::String>, u16>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Break`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Continue`: 10 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 2 bytes, alignment: 2 bytes
+print-type-size type: `std::ops::ControlFlow<std::result::Result<std::convert::Infallible, std::string::String>>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Break`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Continue`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::option::Option<std::string::String>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::panic::Location<'_>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.filename`: 16 bytes
+print-type-size     field `.line`: 4 bytes
+print-type-size     field `.col`: 4 bytes
+print-type-size     field `._filename`: 0 bytes
+print-type-size type: `std::result::Result<&mut basics::CastleFlags, std::string::String>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Err`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Ok`: 16 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 8 bytes, alignment: 8 bytes
+print-type-size type: `std::result::Result<&mut basics::EnPassantState, std::string::String>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Err`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Ok`: 16 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 8 bytes, alignment: 8 bytes
+print-type-size type: `std::result::Result<&mut basics::MemoryBuffer, std::string::String>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Err`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Ok`: 16 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 8 bytes, alignment: 8 bytes
+print-type-size type: `std::result::Result<&mut phase::Phase, std::string::String>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Err`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Ok`: 16 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 8 bytes, alignment: 8 bytes
+print-type-size type: `std::result::Result<&mut u16, std::string::String>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Err`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Ok`: 16 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 8 bytes, alignment: 8 bytes
+print-type-size type: `std::result::Result<&str, std::str::Utf8Error>`: 24 bytes, alignment: 8 bytes
+print-type-size     discriminant: 8 bytes
+print-type-size     variant `Ok`: 16 bytes
+print-type-size         field `.0`: 16 bytes
+print-type-size     variant `Err`: 16 bytes
+print-type-size         field `.0`: 16 bytes
+print-type-size type: `std::result::Result<&str, std::string::String>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Ok`: 24 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 16 bytes, alignment: 8 bytes
+print-type-size     variant `Err`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size type: `std::result::Result<(), std::string::String>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Err`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Ok`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::result::Result<alloc::raw_vec::RawVecInner, std::collections::TryReserveError>`: 24 bytes, alignment: 8 bytes
+print-type-size     discriminant: 8 bytes
+print-type-size     variant `Ok`: 16 bytes
+print-type-size         field `.0`: 16 bytes
+print-type-size     variant `Err`: 16 bytes
+print-type-size         field `.0`: 16 bytes
+print-type-size type: `std::result::Result<std::convert::Infallible, std::string::String>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Err`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size type: `std::result::Result<u16, std::string::String>`: 24 bytes, alignment: 8 bytes
+print-type-size     variant `Err`: 24 bytes
+print-type-size         field `.0`: 24 bytes
+print-type-size     variant `Ok`: 10 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 2 bytes, alignment: 2 bytes
+print-type-size type: `std::slice::Split<'_, u8, {closure@game/game-tri-chess/src/fen.rs:9:43: 9:47}>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.v`: 16 bytes
+print-type-size     field `.finished`: 1 bytes
+print-type-size     field `.pred`: 0 bytes
+print-type-size     end padding: 7 bytes
+print-type-size type: `std::string::String`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.vec`: 24 bytes
+print-type-size type: `std::vec::Vec<&[u8]>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.buf`: 16 bytes
+print-type-size     field `.len`: 8 bytes
+print-type-size type: `std::vec::Vec<&moves::PseudoLegalMove>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.buf`: 16 bytes
+print-type-size     field `.len`: 8 bytes
+print-type-size type: `std::vec::Vec<check_information::CheckInformation>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.buf`: 16 bytes
+print-type-size     field `.len`: 8 bytes
+print-type-size type: `std::vec::Vec<u8>`: 24 bytes, alignment: 8 bytes
+print-type-size     field `.buf`: 16 bytes
+print-type-size     field `.len`: 8 bytes
+print-type-size type: `{closure@<std::iter::Take<I> as std::iter::Iterator>::try_fold::check<'_, &std::option::Option<moves::PseudoLegalMove>, (), std::ops::ControlFlow<()>, {closure@std::iter::adapters::filter_map::filter_map_try_fold<'_, &std::option::Option<moves::PseudoLegalMove>, &moves::PseudoLegalMove, (), std::ops::ControlFlow<()>, for<'a> fn(&'a std::option::Option<moves::PseudoLegalMove>) -> std::option::Option<&'a moves::PseudoLegalMove> {std::option::Option::<moves::PseudoLegalMove>::as_ref}, {closure@std::iter::Iterator::any::check<&moves::PseudoLegalMove, {closure@game/game-tri-chess/src/moves.rs:260:25: 260:28}>::{closure#0}}>::{closure#0}}>::{closure#0}}`: 24 bytes, alignment: 8 bytes
+print-type-size     end padding: 24 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/check_information.rs:93:30: 93:51}`: 24 bytes, alignment: 8 bytes
+print-type-size     end padding: 24 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/chess_game.rs:221:45: 221:55}`: 24 bytes, alignment: 8 bytes
+print-type-size     end padding: 24 bytes
+print-type-size type: `alloc::raw_vec::RawVec<&[u8]>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.inner`: 16 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `alloc::raw_vec::RawVec<&moves::PseudoLegalMove>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.inner`: 16 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `alloc::raw_vec::RawVec<check_information::CheckInformation>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.inner`: 16 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `alloc::raw_vec::RawVec<u8>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.inner`: 16 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `alloc::raw_vec::RawVecInner`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.cap`: 8 bytes
+print-type-size     field `.ptr`: 8 bytes
+print-type-size     field `.alloc`: 0 bytes
+print-type-size type: `core::fmt::builders::DebugInner<'_, '_>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.fmt`: 8 bytes
+print-type-size     field `.result`: 1 bytes
+print-type-size     field `.has_fields`: 1 bytes
+print-type-size     end padding: 6 bytes
+print-type-size type: `core::fmt::rt::Argument<'_>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.ty`: 16 bytes
+print-type-size type: `core::fmt::rt::ArgumentType<'_>`: 16 bytes, alignment: 8 bytes
+print-type-size     variant `Placeholder`: 16 bytes
+print-type-size         field `.value`: 8 bytes
+print-type-size         field `.formatter`: 8 bytes
+print-type-size         field `._lifetime`: 0 bytes
+print-type-size     variant `Count`: 10 bytes
+print-type-size         padding: 8 bytes
+print-type-size         field `.0`: 2 bytes, alignment: 2 bytes
+print-type-size type: `core::fmt::rt::Count`: 16 bytes, alignment: 8 bytes
+print-type-size     discriminant: 2 bytes
+print-type-size     variant `Param`: 14 bytes
+print-type-size         padding: 6 bytes
+print-type-size         field `.0`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Is`: 2 bytes
+print-type-size         field `.0`: 2 bytes
+print-type-size     variant `Implied`: 0 bytes
+print-type-size type: `moves::MoveStoreIter<'_>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.store`: 8 bytes
+print-type-size     field `.index`: 8 bytes
+print-type-size type: `std::alloc::Layout`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.align`: 8 bytes
+print-type-size     field `.size`: 8 bytes
+print-type-size type: `std::array::iter::iter_inner::PolymorphicIter<[std::mem::MaybeUninit<(i8, i8, i8)>]>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.alive`: 16 bytes
+print-type-size     field `.data`: 0 bytes
+print-type-size type: `std::array::iter::iter_inner::PolymorphicIter<[std::mem::MaybeUninit<basics::Color>]>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.alive`: 16 bytes
+print-type-size     field `.data`: 0 bytes
+print-type-size type: `std::array::iter::iter_inner::PolymorphicIter<[std::mem::MaybeUninit<basics::Piece>]>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.alive`: 16 bytes
+print-type-size     field `.data`: 0 bytes
+print-type-size type: `std::collections::TryReserveError`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.kind`: 16 bytes
+print-type-size type: `std::collections::TryReserveErrorKind`: 16 bytes, alignment: 8 bytes
+print-type-size     variant `AllocError`: 16 bytes
+print-type-size         field `.layout`: 16 bytes
+print-type-size         field `.non_exhaustive`: 0 bytes
+print-type-size     variant `CapacityOverflow`: 0 bytes
+print-type-size type: `std::fmt::DebugList<'_, '_>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.inner`: 16 bytes
+print-type-size type: `std::fmt::DebugStruct<'_, '_>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.fmt`: 8 bytes
+print-type-size     field `.result`: 1 bytes
+print-type-size     field `.has_fields`: 1 bytes
+print-type-size     end padding: 6 bytes
+print-type-size type: `std::iter::Cloned<std::slice::Iter<'_, char>>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.it`: 16 bytes
+print-type-size type: `std::iter::Map<std::slice::Iter<'_, char>, for<'a> fn(&'a char) -> char {<char as std::clone::Clone>::clone}>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.iter`: 16 bytes
+print-type-size     field `.f`: 0 bytes
+print-type-size type: `std::ops::ControlFlow<std::ops::ControlFlow<&moves::PseudoLegalMove>>`: 16 bytes, alignment: 8 bytes
+print-type-size     discriminant: 8 bytes
+print-type-size     variant `Break`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `Continue`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::ops::ControlFlow<std::ops::ControlFlow<std::ops::ControlFlow<&moves::PseudoLegalMove>, std::convert::Infallible>>`: 16 bytes, alignment: 8 bytes
+print-type-size     discriminant: 8 bytes
+print-type-size     variant `Break`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `Continue`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::ops::Range<usize>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.start`: 8 bytes
+print-type-size     field `.end`: 8 bytes
+print-type-size type: `std::ops::index_range::IndexRange`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.start`: 8 bytes
+print-type-size     field `.end`: 8 bytes
+print-type-size type: `std::option::Option<&[core::fmt::rt::Placeholder]>`: 16 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 16 bytes
+print-type-size         field `.0`: 16 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<&[u8]>`: 16 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 16 bytes
+print-type-size         field `.0`: 16 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<&str>`: 16 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 16 bytes
+print-type-size         field `.0`: 16 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<(usize, &basics::Color)>`: 16 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 16 bytes
+print-type-size         field `.0`: 16 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<usize>`: 16 bytes, alignment: 8 bytes
+print-type-size     discriminant: 8 bytes
+print-type-size     variant `Some`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::ptr::NonNull<[&moves::PseudoLegalMove]>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 16 bytes
+print-type-size type: `std::ptr::NonNull<[(i8, i8, i8)]>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 16 bytes
+print-type-size type: `std::ptr::NonNull<[basics::Color]>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 16 bytes
+print-type-size type: `std::ptr::NonNull<[basics::MemorySlot]>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 16 bytes
+print-type-size type: `std::ptr::NonNull<[char]>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 16 bytes
+print-type-size type: `std::ptr::NonNull<[std::option::Option<moves::PseudoLegalMove>]>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 16 bytes
+print-type-size type: `std::ptr::NonNull<[u128]>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 16 bytes
+print-type-size type: `std::ptr::NonNull<[u8]>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 16 bytes
+print-type-size type: `std::ptr::NonNull<str>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 16 bytes
+print-type-size type: `std::result::Result<(), std::collections::TryReserveError>`: 16 bytes, alignment: 8 bytes
+print-type-size     variant `Err`: 16 bytes
+print-type-size         field `.0`: 16 bytes
+print-type-size     variant `Ok`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::slice::Iter<'_, &moves::PseudoLegalMove>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.ptr`: 8 bytes
+print-type-size     field `.end_or_len`: 8 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `std::slice::Iter<'_, (i8, i8, i8)>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.ptr`: 8 bytes
+print-type-size     field `.end_or_len`: 8 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `std::slice::Iter<'_, basics::Color>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.ptr`: 8 bytes
+print-type-size     field `.end_or_len`: 8 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `std::slice::Iter<'_, basics::MemorySlot>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.ptr`: 8 bytes
+print-type-size     field `.end_or_len`: 8 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `std::slice::Iter<'_, char>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.ptr`: 8 bytes
+print-type-size     field `.end_or_len`: 8 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `std::slice::Iter<'_, std::option::Option<moves::PseudoLegalMove>>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.ptr`: 8 bytes
+print-type-size     field `.end_or_len`: 8 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `std::slice::Iter<'_, u128>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.ptr`: 8 bytes
+print-type-size     field `.end_or_len`: 8 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `std::slice::Iter<'_, u8>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.ptr`: 8 bytes
+print-type-size     field `.end_or_len`: 8 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `std::slice::IterMut<'_, basics::MemorySlot>`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.ptr`: 8 bytes
+print-type-size     field `.end_or_len`: 8 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `std::str::Utf8Error`: 16 bytes, alignment: 8 bytes
+print-type-size     field `.valid_up_to`: 8 bytes
+print-type-size     field `.error_len`: 2 bytes
+print-type-size     end padding: 6 bytes
+print-type-size type: `{closure@<std::iter::Enumerate<I> as std::iter::Iterator>::try_fold::enumerate<'_, &basics::MemorySlot, (), std::ops::ControlFlow<(pos::MemoryPos, basics::MemorySlot)>, {closure@std::iter::Iterator::find_map::check<(usize, &basics::MemorySlot), (pos::MemoryPos, basics::MemorySlot), &mut {closure@game/game-tri-chess/src/basics.rs:226:46: 226:58}>::{closure#0}}>::{closure#0}}`: 16 bytes, alignment: 8 bytes
+print-type-size     end padding: 16 bytes
+print-type-size type: `{closure@<std::iter::Take<I> as std::iter::Iterator>::try_fold::check<'_, &std::option::Option<moves::PseudoLegalMove>, (), std::ops::ControlFlow<&moves::PseudoLegalMove>, {closure@std::iter::Iterator::find_map::check<&std::option::Option<moves::PseudoLegalMove>, &moves::PseudoLegalMove, &mut for<'a> fn(&'a std::option::Option<moves::PseudoLegalMove>) -> std::option::Option<&'a moves::PseudoLegalMove> {std::option::Option::<moves::PseudoLegalMove>::as_ref}>::{closure#0}}>::{closure#0}}`: 16 bytes, alignment: 8 bytes
+print-type-size     end padding: 16 bytes
+print-type-size type: `{closure@std::array::iter::iter_inner::PolymorphicIter<[std::mem::MaybeUninit<(i8, i8, i8)>]>::next::{closure#0}}`: 16 bytes, alignment: 8 bytes
+print-type-size     end padding: 16 bytes
+print-type-size type: `{closure@std::array::iter::iter_inner::PolymorphicIter<[std::mem::MaybeUninit<basics::Color>]>::next::{closure#0}}`: 16 bytes, alignment: 8 bytes
+print-type-size     end padding: 16 bytes
+print-type-size type: `{closure@std::array::iter::iter_inner::PolymorphicIter<[std::mem::MaybeUninit<basics::Piece>]>::next::{closure#0}}`: 16 bytes, alignment: 8 bytes
+print-type-size     end padding: 16 bytes
+print-type-size type: `{closure@std::iter::adapters::filter_map::filter_map_try_fold<'_, &std::option::Option<moves::PseudoLegalMove>, &moves::PseudoLegalMove, (), std::ops::ControlFlow<()>, for<'a> fn(&'a std::option::Option<moves::PseudoLegalMove>) -> std::option::Option<&'a moves::PseudoLegalMove> {std::option::Option::<moves::PseudoLegalMove>::as_ref}, {closure@std::iter::Iterator::any::check<&moves::PseudoLegalMove, {closure@game/game-tri-chess/src/moves.rs:260:25: 260:28}>::{closure#0}}>::{closure#0}}`: 16 bytes, alignment: 8 bytes
+print-type-size     end padding: 16 bytes
+print-type-size type: `check_information::CheckInformation`: 9 bytes, alignment: 1 bytes
+print-type-size     field `.player_attacked`: 1 bytes
+print-type-size     field `.attack`: 4 bytes
+print-type-size     field `.king`: 4 bytes
+print-type-size type: `<std::vec::IntoIter<T, A> as std::ops::Drop>::drop::DropGuard<'_, check_information::CheckInformation, std::alloc::Global>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.0`: 8 bytes
+print-type-size type: `core::num::niche_types::NonZeroUsizeInner`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.0`: 8 bytes
+print-type-size type: `core::num::niche_types::UsizeNoHighBit`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.0`: 8 bytes
+print-type-size type: `std::fmt::FormattingOptions`: 8 bytes, alignment: 4 bytes
+print-type-size     field `.flags`: 4 bytes
+print-type-size     field `.width`: 2 bytes
+print-type-size     field `.precision`: 2 bytes
+print-type-size type: `std::num::NonZero<usize>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.0`: 8 bytes
+print-type-size type: `std::ops::ControlFlow<&moves::PseudoLegalMove, std::convert::Infallible>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Break`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size type: `std::ops::ControlFlow<&moves::PseudoLegalMove>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Break`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `Continue`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::ops::ControlFlow<std::ops::ControlFlow<&moves::PseudoLegalMove, std::convert::Infallible>>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Break`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `Continue`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::ops::ControlFlow<std::ops::ControlFlow<&moves::PseudoLegalMove>, std::convert::Infallible>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Break`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size type: `std::ops::ControlFlow<std::option::Option<std::convert::Infallible>, &basics::Color>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Continue`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `Break`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::ops::RangeFrom<usize>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.start`: 8 bytes
+print-type-size type: `std::ops::RangeTo<usize>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.end`: 8 bytes
+print-type-size type: `std::option::Option<&&moves::PseudoLegalMove>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<&(i8, i8, i8)>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<&basics::Color>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<&basics::MemorySlot>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<&moves::PseudoLegalMove>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<&mut basics::MemorySlot>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<&std::option::Option<moves::PseudoLegalMove>>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<&u8>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<extern "C" fn(unwind::libunwind::_Unwind_Reason_Code, *mut unwind::libunwind::_Unwind_Exception)>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<std::ptr::Alignment>`: 8 bytes, alignment: 8 bytes
+print-type-size     variant `Some`: 8 bytes
+print-type-size         field `.0`: 8 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<u32>`: 8 bytes, alignment: 4 bytes
+print-type-size     discriminant: 4 bytes
+print-type-size     variant `Some`: 4 bytes
+print-type-size         field `.0`: 4 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::ptr::Alignment`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.0`: 8 bytes
+print-type-size type: `std::ptr::DynMetadata<dyn std::fmt::Debug>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `._vtable_ptr`: 8 bytes
+print-type-size     field `._phantom`: 0 bytes
+print-type-size type: `std::ptr::DynMetadata<dyn std::fmt::Write>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `._vtable_ptr`: 8 bytes
+print-type-size     field `._phantom`: 0 bytes
+print-type-size type: `std::ptr::NonNull<&[u8]>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<&basics::PlayerState<false>>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<&basics::PlayerState<true>>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<&moves::ChessMoveStore>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<&moves::PseudoLegalMove>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<&str>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<()>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<(i8, i8, i8)>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<(usize, std::option::Option<usize>)>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<basics::Color>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<basics::MemoryBuffer>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<basics::MemorySlot>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<basics::Piece>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<bool>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<char>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<check_information::CheckInformation>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<pos::MemoryPos>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<std::option::Option<moves::PseudoLegalMove>>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<std::option::Option<pos::MemoryPos>>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<std::ptr::metadata::VTable>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<std::string::String>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<u128>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<u8>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::NonNull<usize>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size type: `std::ptr::Unique<&[u8]>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `std::ptr::Unique<&moves::PseudoLegalMove>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `std::ptr::Unique<check_information::CheckInformation>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `std::ptr::Unique<u8>`: 8 bytes, alignment: 8 bytes
+print-type-size     field `.pointer`: 8 bytes
+print-type-size     field `._marker`: 0 bytes
+print-type-size type: `std::ptr::alignment::AlignmentEnum`: 8 bytes, alignment: 8 bytes
+print-type-size     discriminant: 8 bytes
+print-type-size     variant `_Align1Shl0`: 0 bytes
+print-type-size     variant `_Align1Shl1`: 0 bytes
+print-type-size     variant `_Align1Shl2`: 0 bytes
+print-type-size     variant `_Align1Shl3`: 0 bytes
+print-type-size     variant `_Align1Shl4`: 0 bytes
+print-type-size     variant `_Align1Shl5`: 0 bytes
+print-type-size     variant `_Align1Shl6`: 0 bytes
+print-type-size     variant `_Align1Shl7`: 0 bytes
+print-type-size     variant `_Align1Shl8`: 0 bytes
+print-type-size     variant `_Align1Shl9`: 0 bytes
+print-type-size     variant `_Align1Shl10`: 0 bytes
+print-type-size     variant `_Align1Shl11`: 0 bytes
+print-type-size     variant `_Align1Shl12`: 0 bytes
+print-type-size     variant `_Align1Shl13`: 0 bytes
+print-type-size     variant `_Align1Shl14`: 0 bytes
+print-type-size     variant `_Align1Shl15`: 0 bytes
+print-type-size     variant `_Align1Shl16`: 0 bytes
+print-type-size     variant `_Align1Shl17`: 0 bytes
+print-type-size     variant `_Align1Shl18`: 0 bytes
+print-type-size     variant `_Align1Shl19`: 0 bytes
+print-type-size     variant `_Align1Shl20`: 0 bytes
+print-type-size     variant `_Align1Shl21`: 0 bytes
+print-type-size     variant `_Align1Shl22`: 0 bytes
+print-type-size     variant `_Align1Shl23`: 0 bytes
+print-type-size     variant `_Align1Shl24`: 0 bytes
+print-type-size     variant `_Align1Shl25`: 0 bytes
+print-type-size     variant `_Align1Shl26`: 0 bytes
+print-type-size     variant `_Align1Shl27`: 0 bytes
+print-type-size     variant `_Align1Shl28`: 0 bytes
+print-type-size     variant `_Align1Shl29`: 0 bytes
+print-type-size     variant `_Align1Shl30`: 0 bytes
+print-type-size     variant `_Align1Shl31`: 0 bytes
+print-type-size     variant `_Align1Shl32`: 0 bytes
+print-type-size     variant `_Align1Shl33`: 0 bytes
+print-type-size     variant `_Align1Shl34`: 0 bytes
+print-type-size     variant `_Align1Shl35`: 0 bytes
+print-type-size     variant `_Align1Shl36`: 0 bytes
+print-type-size     variant `_Align1Shl37`: 0 bytes
+print-type-size     variant `_Align1Shl38`: 0 bytes
+print-type-size     variant `_Align1Shl39`: 0 bytes
+print-type-size     variant `_Align1Shl40`: 0 bytes
+print-type-size     variant `_Align1Shl41`: 0 bytes
+print-type-size     variant `_Align1Shl42`: 0 bytes
+print-type-size     variant `_Align1Shl43`: 0 bytes
+print-type-size     variant `_Align1Shl44`: 0 bytes
+print-type-size     variant `_Align1Shl45`: 0 bytes
+print-type-size     variant `_Align1Shl46`: 0 bytes
+print-type-size     variant `_Align1Shl47`: 0 bytes
+print-type-size     variant `_Align1Shl48`: 0 bytes
+print-type-size     variant `_Align1Shl49`: 0 bytes
+print-type-size     variant `_Align1Shl50`: 0 bytes
+print-type-size     variant `_Align1Shl51`: 0 bytes
+print-type-size     variant `_Align1Shl52`: 0 bytes
+print-type-size     variant `_Align1Shl53`: 0 bytes
+print-type-size     variant `_Align1Shl54`: 0 bytes
+print-type-size     variant `_Align1Shl55`: 0 bytes
+print-type-size     variant `_Align1Shl56`: 0 bytes
+print-type-size     variant `_Align1Shl57`: 0 bytes
+print-type-size     variant `_Align1Shl58`: 0 bytes
+print-type-size     variant `_Align1Shl59`: 0 bytes
+print-type-size     variant `_Align1Shl60`: 0 bytes
+print-type-size     variant `_Align1Shl61`: 0 bytes
+print-type-size     variant `_Align1Shl62`: 0 bytes
+print-type-size     variant `_Align1Shl63`: 0 bytes
+print-type-size type: `{closure@<std::iter::FilterMap<std::iter::Take<std::slice::Iter<'_, std::option::Option<moves::PseudoLegalMove>>>, for<'a> fn(&'a std::option::Option<moves::PseudoLegalMove>) -> std::option::Option<&'a moves::PseudoLegalMove> {std::option::Option::<moves::PseudoLegalMove>::as_ref}> as std::iter::Iterator>::collect<std::vec::Vec<&moves::PseudoLegalMove>>::{closure#0}}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@<std::slice::Iter<'_, char> as std::iter::Iterator>::collect<std::string::String>::{closure#0}}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@<std::slice::Split<'_, u8, {closure@game/game-tri-chess/src/fen.rs:9:43: 9:47}> as std::iter::Iterator>::collect<std::vec::Vec<&[u8]>>::{closure#0}}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@<std::slice::Split<'_, u8, {closure@game/game-tri-chess/src/fen.rs:9:43: 9:47}> as std::iter::Iterator>::next::{closure#0}}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@<std::string::String as std::iter::Extend<char>>::extend<std::iter::Cloned<std::slice::Iter<'_, char>>>::{closure#0}}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/basics.rs:198:38: 198:43}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/basics.rs:630:44: 630:47}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/fen.rs:105:22: 105:25}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/fen.rs:107:22: 107:25}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/moves.rs:260:25: 260:28}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/moves.rs:36:43: 36:47}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@std::fmt::format::{closure#0}}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@std::iter::Iterator::any::check<&moves::PseudoLegalMove, {closure@game/game-tri-chess/src/moves.rs:260:25: 260:28}>::{closure#0}}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@std::iter::Iterator::find_map::check<&std::option::Option<moves::PseudoLegalMove>, &moves::PseudoLegalMove, &mut for<'a> fn(&'a std::option::Option<moves::PseudoLegalMove>) -> std::option::Option<&'a moves::PseudoLegalMove> {std::option::Option::<moves::PseudoLegalMove>::as_ref}>::{closure#0}}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@std::iter::Iterator::find_map::check<(usize, &basics::MemorySlot), (pos::MemoryPos, basics::MemorySlot), &mut {closure@game/game-tri-chess/src/basics.rs:226:46: 226:58}>::{closure#0}}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@std::iter::Iterator::for_each::call<char, {closure@<std::string::String as std::iter::Extend<char>>::extend<std::iter::Cloned<std::slice::Iter<'_, char>>>::{closure#0}}>::{closure#0}}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `{closure@std::iter::adapters::map::map_fold<&char, char, (), for<'a> fn(&'a char) -> char {<char as std::clone::Clone>::clone}, {closure@std::iter::Iterator::for_each::call<char, {closure@<std::string::String as std::iter::Extend<char>>::extend<std::iter::Cloned<std::slice::Iter<'_, char>>>::{closure#0}}>::{closure#0}}>::{closure#0}}`: 8 bytes, alignment: 8 bytes
+print-type-size     end padding: 8 bytes
+print-type-size type: `moves::TurnCache`: 7 bytes, alignment: 1 bytes
+print-type-size     field `.king_pos`: 4 bytes
+print-type-size     field `.is_check`: 1 bytes
+print-type-size     field `.grace_period`: 1 bytes
+print-type-size     field `.turn`: 1 bytes
+print-type-size type: `basics::EnPassantState`: 6 bytes, alignment: 1 bytes
+print-type-size     field `.0`: 6 bytes
+print-type-size type: `moves::PseudoLegalMove`: 4 bytes, alignment: 1 bytes
+print-type-size     field `.move_type`: 2 bytes
+print-type-size     field `.from`: 1 bytes
+print-type-size     field `.to`: 1 bytes
+print-type-size type: `pos::FullCoordinates`: 4 bytes, alignment: 1 bytes
+print-type-size     field `.i`: 1 bytes
+print-type-size     field `.q`: 1 bytes
+print-type-size     field `.r`: 1 bytes
+print-type-size     field `.s`: 1 bytes
+print-type-size type: `std::option::Option<(i8, i8, i8)>`: 4 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Some`: 3 bytes
+print-type-size         field `.0`: 3 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<char>`: 4 bytes, alignment: 4 bytes
+print-type-size     variant `Some`: 4 bytes
+print-type-size         field `.0`: 4 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<moves::PseudoLegalMove>`: 4 bytes, alignment: 1 bytes
+print-type-size     variant `Some`: 4 bytes
+print-type-size         field `.0`: 4 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<pos::QRSPos>`: 4 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Some`: 3 bytes
+print-type-size         field `.0`: 3 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<u16>`: 4 bytes, alignment: 2 bytes
+print-type-size     discriminant: 2 bytes
+print-type-size     variant `Some`: 2 bytes
+print-type-size         field `.0`: 2 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::result::Result<u16, std::num::ParseIntError>`: 4 bytes, alignment: 2 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Ok`: 3 bytes
+print-type-size         padding: 1 bytes
+print-type-size         field `.0`: 2 bytes, alignment: 2 bytes
+print-type-size     variant `Err`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size type: `unwind::libunwind::_Unwind_Reason_Code`: 4 bytes, alignment: 4 bytes
+print-type-size     discriminant: 4 bytes
+print-type-size     variant `_URC_NO_REASON`: 0 bytes
+print-type-size     variant `_URC_FOREIGN_EXCEPTION_CAUGHT`: 0 bytes
+print-type-size     variant `_URC_FATAL_PHASE2_ERROR`: 0 bytes
+print-type-size     variant `_URC_FATAL_PHASE1_ERROR`: 0 bytes
+print-type-size     variant `_URC_NORMAL_STOP`: 0 bytes
+print-type-size     variant `_URC_END_OF_STACK`: 0 bytes
+print-type-size     variant `_URC_HANDLER_FOUND`: 0 bytes
+print-type-size     variant `_URC_INSTALL_CONTEXT`: 0 bytes
+print-type-size     variant `_URC_CONTINUE_UNWIND`: 0 bytes
+print-type-size     variant `_URC_FAILURE`: 0 bytes
+print-type-size type: `pos::QRSPos`: 3 bytes, alignment: 1 bytes
+print-type-size     field `.q`: 1 bytes
+print-type-size     field `.r`: 1 bytes
+print-type-size     field `.s`: 1 bytes
+print-type-size type: `std::mem::ManuallyDrop<(i8, i8, i8)>`: 3 bytes, alignment: 1 bytes
+print-type-size     field `.value`: 3 bytes
+print-type-size type: `std::mem::MaybeUninit<(i8, i8, i8)>`: 3 bytes, alignment: 1 bytes
+print-type-size     variant `MaybeUninit`: 3 bytes
+print-type-size         field `.uninit`: 0 bytes
+print-type-size         field `.value`: 3 bytes
+print-type-size type: `std::ops::ControlFlow<(pos::MemoryPos, basics::MemorySlot)>`: 3 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Break`: 2 bytes
+print-type-size         field `.0`: 2 bytes
+print-type-size     variant `Continue`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::ops::ControlFlow<std::ops::ControlFlow<(pos::MemoryPos, basics::MemorySlot), std::convert::Infallible>>`: 3 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Break`: 2 bytes
+print-type-size         field `.0`: 2 bytes
+print-type-size     variant `Continue`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::option::Option<(pos::MemoryPos, basics::MemorySlot)>`: 3 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Some`: 2 bytes
+print-type-size         field `.0`: 2 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `moves::MoveType`: 2 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `EnPassant`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size     variant `Promotion`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size     variant `EnPassantPromotion`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size     variant `Move`: 0 bytes
+print-type-size     variant `DoublePawnPush`: 0 bytes
+print-type-size     variant `CastleKingSide`: 0 bytes
+print-type-size     variant `CastleQueenSide`: 0 bytes
+print-type-size type: `phase::Phase`: 2 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Normal`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size     variant `Won`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size     variant `Draw`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size type: `std::ops::ControlFlow<(pos::MemoryPos, basics::MemorySlot), std::convert::Infallible>`: 2 bytes, alignment: 1 bytes
+print-type-size     variant `Break`: 2 bytes
+print-type-size         field `.0`: 2 bytes
+print-type-size type: `std::ops::Range<u8>`: 2 bytes, alignment: 1 bytes
+print-type-size     field `.start`: 1 bytes
+print-type-size     field `.end`: 1 bytes
+print-type-size type: `std::option::Option<(basics::Color, basics::Piece)>`: 2 bytes, alignment: 1 bytes
+print-type-size     variant `Some`: 2 bytes
+print-type-size         field `.0`: 2 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<pos::MemoryPos>`: 2 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Some`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<u8>`: 2 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Some`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `alloc::raw_vec::AllocInit`: 1 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Uninitialized`: 0 bytes
+print-type-size     variant `Zeroed`: 0 bytes
+print-type-size type: `basics::CastleFlags`: 1 bytes, alignment: 1 bytes
+print-type-size     field `.0`: 1 bytes
+print-type-size type: `basics::Color`: 1 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `White`: 0 bytes
+print-type-size     variant `Gray`: 0 bytes
+print-type-size     variant `Black`: 0 bytes
+print-type-size type: `basics::MemorySlot`: 1 bytes, alignment: 1 bytes
+print-type-size     field `.0`: 1 bytes
+print-type-size type: `basics::Piece`: 1 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Pawn`: 0 bytes
+print-type-size     variant `Knight`: 0 bytes
+print-type-size     variant `Bishop`: 0 bytes
+print-type-size     variant `Rook`: 0 bytes
+print-type-size     variant `Queen`: 0 bytes
+print-type-size     variant `King`: 0 bytes
+print-type-size type: `basics::PlayerState<false>`: 1 bytes, alignment: 1 bytes
+print-type-size     field `.0`: 1 bytes
+print-type-size type: `basics::PlayerState<true>`: 1 bytes, alignment: 1 bytes
+print-type-size     field `.0`: 1 bytes
+print-type-size type: `core::panicking::AssertKind`: 1 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Eq`: 0 bytes
+print-type-size     variant `Ne`: 0 bytes
+print-type-size     variant `Match`: 0 bytes
+print-type-size type: `moves::PassantWithPromotion`: 1 bytes, alignment: 1 bytes
+print-type-size     field `.0`: 1 bytes
+print-type-size type: `pos::MemoryPos`: 1 bytes, alignment: 1 bytes
+print-type-size     field `.0`: 1 bytes
+print-type-size type: `std::mem::ManuallyDrop<basics::Color>`: 1 bytes, alignment: 1 bytes
+print-type-size     field `.value`: 1 bytes
+print-type-size type: `std::mem::ManuallyDrop<basics::Piece>`: 1 bytes, alignment: 1 bytes
+print-type-size     field `.value`: 1 bytes
+print-type-size type: `std::mem::ManuallyDrop<u8>`: 1 bytes, alignment: 1 bytes
+print-type-size     field `.value`: 1 bytes
+print-type-size type: `std::mem::MaybeUninit<basics::Color>`: 1 bytes, alignment: 1 bytes
+print-type-size     variant `MaybeUninit`: 1 bytes
+print-type-size         field `.uninit`: 0 bytes
+print-type-size         field `.value`: 1 bytes
+print-type-size type: `std::mem::MaybeUninit<basics::Piece>`: 1 bytes, alignment: 1 bytes
+print-type-size     variant `MaybeUninit`: 1 bytes
+print-type-size         field `.uninit`: 0 bytes
+print-type-size         field `.value`: 1 bytes
+print-type-size type: `std::mem::MaybeUninit<u8>`: 1 bytes, alignment: 1 bytes
+print-type-size     variant `MaybeUninit`: 1 bytes
+print-type-size         field `.uninit`: 0 bytes
+print-type-size         field `.value`: 1 bytes
+print-type-size type: `std::num::IntErrorKind`: 1 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Empty`: 0 bytes
+print-type-size     variant `InvalidDigit`: 0 bytes
+print-type-size     variant `PosOverflow`: 0 bytes
+print-type-size     variant `NegOverflow`: 0 bytes
+print-type-size     variant `Zero`: 0 bytes
+print-type-size type: `std::num::ParseIntError`: 1 bytes, alignment: 1 bytes
+print-type-size     field `.kind`: 1 bytes
+print-type-size type: `std::ops::ControlFlow<()>`: 1 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Continue`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size     variant `Break`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::ops::ControlFlow<std::ops::ControlFlow<(), std::convert::Infallible>>`: 1 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Continue`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size     variant `Break`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::ops::ControlFlow<std::ops::ControlFlow<()>, std::convert::Infallible>`: 1 bytes, alignment: 1 bytes
+print-type-size     variant `Break`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size type: `std::ops::ControlFlow<std::ops::ControlFlow<()>>`: 1 bytes, alignment: 1 bytes
+print-type-size     variant `Break`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size     variant `Continue`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::ops::ControlFlow<std::ops::ControlFlow<std::ops::ControlFlow<()>, std::convert::Infallible>>`: 1 bytes, alignment: 1 bytes
+print-type-size     variant `Break`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size     variant `Continue`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::option::Option<basics::Color>`: 1 bytes, alignment: 1 bytes
+print-type-size     variant `Some`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::option::Option<basics::Piece>`: 1 bytes, alignment: 1 bytes
+print-type-size     variant `Some`: 1 bytes
+print-type-size         field `.0`: 1 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `std::result::Result<(), std::fmt::Error>`: 1 bytes, alignment: 1 bytes
+print-type-size     discriminant: 1 bytes
+print-type-size     variant `Ok`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size     variant `Err`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::alloc::Global`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::convert::Infallible`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::fmt::Error`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<&&moves::PseudoLegalMove>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<&()>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<&(i8, i8, i8)>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<&[u8]>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<&basics::Color>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<&basics::MemorySlot>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<&char>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<&moves::PseudoLegalMove>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<&mut basics::MemorySlot>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<&std::option::Option<moves::PseudoLegalMove>>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<&str>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<&u128>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<&u8>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<check_information::CheckInformation>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<dyn std::fmt::Debug>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<dyn std::fmt::Write>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::marker::PhantomData<u8>`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::mem::ManuallyDrop<std::alloc::Global>`: 0 bytes, alignment: 1 bytes
+print-type-size     field `.value`: 0 bytes
+print-type-size type: `std::ops::ControlFlow<(), std::convert::Infallible>`: 0 bytes, alignment: 1 bytes
+print-type-size     variant `Break`: 0 bytes
+print-type-size         field `.0`: 0 bytes
+print-type-size type: `std::ops::RangeFull`: 0 bytes, alignment: 1 bytes
+print-type-size type: `std::option::Option<std::convert::Infallible>`: 0 bytes, alignment: 1 bytes
+print-type-size     variant `None`: 0 bytes
+print-type-size type: `unwind::libunwind::_Unwind_Context`: 0 bytes, alignment: 1 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/basics.rs:226:46: 226:58}`: 0 bytes, alignment: 1 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/chess_game_attack_bb.rs:133:34: 133:44}`: 0 bytes, alignment: 1 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/chess_game_attack_bb.rs:137:34: 137:44}`: 0 bytes, alignment: 1 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/fen.rs:9:43: 9:47}`: 0 bytes, alignment: 1 bytes
+print-type-size type: `{closure@game/game-tri-chess/src/moves.rs:90:40: 90:43}`: 0 bytes, alignment: 1 bytes

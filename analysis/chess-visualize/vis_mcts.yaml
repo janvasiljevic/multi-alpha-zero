@@ -1,0 +1,42 @@
+vis:
+#  - name: old_model
+#    playouts: 5000
+#    exploration: 3.1
+#    model_path: ./testing/play/v2/ChessDomain_435.onnx
+#    fen: r1bqkb1r/ppp2ppp/3p4/4p2n/X/8/8/8/5n2 X/r2qkbnr/p1p1ppp1/3p4/np5p/X X/X/r1bqkbnr/pppp2p1/5p2/n3p2p B qkqkqk -2- 0 5
+#    output_file: pdfs/finetune/old.pdf
+#    show_number_of_top_moves: 3
+#    color_map: cool
+#  - name: new_model
+#    playouts: 5000
+#    exploration: 3.1
+#    model_path: ./testing/play/ChessDomain32/ChessDomain_850.onnx
+#    fen: r1bqkb1r/ppp2ppp/3p4/4p2n/X/8/8/8/5n2 X/r2qkbnr/p1p1ppp1/3p4/np5p/X X/X/r1bqkbnr/pppp2p1/5p2/n3p2p B qkqkqk -2- 0 5
+#    output_file: pdfs/finetune/new.pdf
+#    show_number_of_top_moves: 3
+#    color_map: cool
+#  - name: coordination_1
+#    playouts: 800
+#    exploration: 3.1
+#    model_path: ./testing/play/ChessDomain32/ChessDomain_850.onnx
+#    fen: 8/8/1p2p3/8/X/8/8/8/5kp1 8/8/8/7p/4k3/4p3/5r2/8/X 8/8/8/3n4/X/8/pk6/1p6/4p3 W ------ --- 17 5
+#    output_file: pdfs/finetune/coordination_1.pdf
+#    show_number_of_top_moves: 4
+#    color_map: cool
+#  - name: coordination_2
+#    playouts: 5000
+#    exploration: 3.1
+#    model_path: ./testing/play/ChessDomain32/ChessDomain_850.onnx
+#    fen: r1bq1knr/pp1p1pp1/2p5/6n1/8/8/8/2p5/X X/r2q2nr/pp2k1p1/3p1p2/n6p/8/4b3/8/1b6 8/8/8/3bq3/X/r3k3/ppp2pp1/3p2br/4p2p W ----q- --- 0 5
+#    output_file: pdfs/finetune/coordination_2.pdf
+#    show_number_of_top_moves: 4
+#    color_map: cool
+
+  - name: fen_249
+    playouts: 10000
+    exploration: 3.1
+    model_path: ./testing/play/ChessDomain32/ChessDomain_249.onnx
+    fen: r3k1r1/1p3p1p/1bnppp2/p7/X/8/5q2/7b/8 X/r5nr/1p2p1k1/1qpp2b1/p4p1p/X X/X/X W ------ --- 0 1
+    output_file: pdfs/finetune/fen_249.pdf
+    show_number_of_top_moves: 5
+    color_map: cool

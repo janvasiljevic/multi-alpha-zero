@@ -1,0 +1,10 @@
+.node-custom-g {
+    fill: #000000;
+    stroke: #000000;
+    stroke-width: 0;
+}
+
+.node-custom-g > circle {
+    stroke: #000000;
+    stroke-width: 2;
+}

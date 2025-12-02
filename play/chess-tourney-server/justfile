@@ -1,0 +1,20 @@
+compile-tsp:
+    tsp format "**/*.tsp"
+    tsp compile api-design --config ./tspconfig.yaml
+
+generate-rust-axum:
+    openapi-generator-cli generate -g rust-axum -i ./api/schema/openapi.json -o ./api-autogen --additional-properties=packageName=api-autogen
+    cargo fmt --manifest-path ./api-autogen/Cargo.toml
+
+generate-ts-react:
+    cd ../chess-tourney-frontend && yarn run orval
+
+refresh-api:
+    @echo "Refreshing API..."
+    just compile-tsp
+    @echo "API refreshed."
+    just generate-rust-axum
+    @echo "Generated Rust Axum server code."
+    just generate-ts-react
+    @echo "Generated TypeScript React client code."
+

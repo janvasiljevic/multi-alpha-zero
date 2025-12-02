@@ -1,0 +1,530 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AppConfig",
+  "type": "object",
+  "properties": {
+    "base_dir": {
+      "description": "Base directory for 'run_name' artifacts.",
+      "type": "string",
+      "default": "runs"
+    },
+    "cycle_collection": {
+      "description": "Settings for the self-play cycle, which controls how often to collect games and samples.\n At least one of the fields must be set to a non-null value.",
+      "$ref": "#/$defs/CycleCollectionSettings",
+      "default": {
+        "max_time_per_cycle_s": 300,
+        "min_games_per_cycle": null,
+        "min_samples_per_cycle": null
+      }
+    },
+    "game": {
+      "description": "The game configuration, which defines the game name and whether it uses absolute mapping.",
+      "$ref": "#/$defs/GameConfig"
+    },
+    "number_of_cycles": {
+      "description": "How many 'self-play'-'train' cycles to perform.\n If null, runs indefinitely, till the user stops the process.",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "uint64",
+      "minimum": 0
+    },
+    "overwrite_run": {
+      "description": "Whether to overwrite existing run artifacts. Be careful with this!",
+      "type": "boolean",
+      "default": false
+    },
+    "performance": {
+      "description": "Performance-related settings.",
+      "$ref": "#/$defs/PerformanceSettings"
+    },
+    "python_interpreter_path": {
+      "type": "string",
+      "default": "python/.venv/bin/python"
+    },
+    "run_name": {
+      "description": "Name of the run, used for storing models, buffers, and other artifacts.",
+      "type": "string"
+    },
+    "self_play_settings": {
+      "description": "Settings for the self-play process.",
+      "$ref": "#/$defs/SelfPlaySettings"
+    },
+    "standalone": {
+      "description": "Whether to just generate games for 1 cycle and exit, without connecting to the training server.",
+      "type": "boolean"
+    },
+    "training": {
+      "description": "Settings for training the neural network (PyTorch).",
+      "$ref": "#/$defs/TrainingConfig"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "game",
+    "standalone",
+    "run_name",
+    "performance",
+    "training",
+    "self_play_settings"
+  ],
+  "$defs": {
+    "ConfigFpuMode": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Relative"
+            },
+            "relative": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "relative"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Fixed"
+            },
+            "fixed": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "fixed"
+          ]
+        }
+      ]
+    },
+    "CycleCollectionSettings": {
+      "type": "object",
+      "properties": {
+        "max_time_per_cycle_s": {
+          "description": "Cut-off time for a training cycle in seconds.",
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint64",
+          "default": 300,
+          "minimum": 0
+        },
+        "min_games_per_cycle": {
+          "description": "Minimum number of games to **collect** in a training cycle.",
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint64",
+          "default": null,
+          "minimum": 0
+        },
+        "min_samples_per_cycle": {
+          "description": "Minimum number of samples to **collect** in a training cycle.",
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint64",
+          "default": null,
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "DirichletSettings": {
+      "type": "object",
+      "properties": {
+        "alpha": {
+          "description": "Dirichlet alpha parameter, controls the noise level in the policy.",
+          "type": "number",
+          "format": "float"
+        },
+        "eps": {
+          "description": "Dirichlet epsilon parameter, controls the amount of noise added to the policy.",
+          "type": "number",
+          "format": "float",
+          "default": 0.25
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "alpha"
+      ]
+    },
+    "GameConfig": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/GameNames"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "GameNames": {
+      "type": "string",
+      "enum": [
+        "Hex2Absolute",
+        "Hex2Canonical",
+        "Hex4Absolute",
+        "Hex4Canonical",
+        "Hex5Absolute",
+        "Hex5Canonical",
+        "Hex5CanonicalAxiomBias",
+        "Hex5CanonicalAxiomBiasBertCls",
+        "ChessAbsPositionalEnc",
+        "ChessAxiomBias",
+        "ChessBigBert",
+        "ChessBigBertV2",
+        "ChessShaw",
+        "ChessHybrid",
+        "ChessDomain"
+      ]
+    },
+    "GpuSpawnerChoice": {
+      "description": "Enum to select the type of GPU spawner to use.",
+      "oneOf": [
+        {
+          "description": "Configuration for the real ONNX-based GPU spawner.",
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Automatic"
+            },
+            "sessions_per_gpu": {
+              "description": "How many sessions to spawn per GPU. May help with latency by interleaving requests.",
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "sessions_per_gpu"
+          ]
+        },
+        {
+          "description": "Configuration for the dummy spawner, used for testing CPU-bound performance.",
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Dummy"
+            },
+            "inferences_per_second": {
+              "description": "The simulated number of inferences per second.",
+              "type": "number",
+              "format": "double"
+            },
+            "num_of_gpus": {
+              "description": "The number of fake GPU instances to spawn.",
+              "type": "integer",
+              "format": "uint",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "inferences_per_second",
+            "num_of_gpus"
+          ]
+        }
+      ]
+    },
+    "MoveSelectionSettings": {
+      "type": "object",
+      "properties": {
+        "temperature": {
+          "type": "number",
+          "format": "float",
+          "default": 1.0
+        },
+        "zero_temp_move_count": {
+          "description": "Number of moves after which the temperature is set to zero.",
+          "type": "integer",
+          "format": "uint32",
+          "default": 40,
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "PerformanceSettings": {
+      "type": "object",
+      "properties": {
+        "cache_size": {
+          "description": "GPU cache size.",
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "cache_writers": {
+          "description": "How many threads to use for writing to the GPU cache.",
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "cpu_generator_threads": {
+          "description": "Number of CPU threads to spawn for game generation.",
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "games_per_cpu_generator": {
+          "description": "Number of games each CPU thread will manage.",
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "gpu": {
+          "description": "Configuration for the GPU spawner and inference workers.",
+          "$ref": "#/$defs/GpuSpawnerChoice"
+        },
+        "gpu_batch_size": {
+          "description": "The batch size for GPU inference.\n For best performance, perform a benchmark to find the optimal size.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "parquest_chunk_size": {
+          "description": "How big chunks are used when saving and loading Parquet files, that the Python server\n uses for training. Higher sizes use less disk space, but take longer to write.\n Note that this can be a bottleneck with games with huge actions spaces or states.",
+          "type": "integer",
+          "format": "uint",
+          "default": 5000,
+          "minimum": 0
+        },
+        "tree_arena_size": {
+          "description": "Size of the arena for retaining the search tree between moves.\n Higher values use more memory, but improve performance, since every time\n the size is exceeded, the tree is de-fragmented, which is expensive.",
+          "type": "integer",
+          "format": "uint",
+          "default": 100000,
+          "minimum": 0
+        }
+      },
+      "required": [
+        "cache_size",
+        "cache_writers",
+        "gpu_batch_size",
+        "cpu_generator_threads",
+        "games_per_cpu_generator",
+        "gpu"
+      ]
+    },
+    "RolloutSettings": {
+      "type": "object",
+      "properties": {
+        "full_iterations": {
+          "description": "Number of full iterations to perform when a full search is chosen.",
+          "type": "integer",
+          "format": "uint64",
+          "default": 200,
+          "minimum": 0
+        },
+        "full_search_prob": {
+          "description": "Probability of performing a full search instead of a partial one.",
+          "type": "number",
+          "format": "double",
+          "default": 1.0
+        },
+        "part_cpuct_exploration": {
+          "description": "When doing partial rollouts, how much to explore. Keep it low, we want greedy moves.",
+          "type": "number",
+          "format": "float",
+          "default": 1.0
+        },
+        "part_iterations": {
+          "description": "Number of partial iterations to perform when a partial search is chosen.",
+          "type": "integer",
+          "format": "uint64",
+          "default": 20,
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "SelfPlaySettings": {
+      "type": "object",
+      "properties": {
+        "contempt": {
+          "type": "number",
+          "format": "float"
+        },
+        "dirichlet": {
+          "$ref": "#/$defs/DirichletSettings"
+        },
+        "max_game_length": {
+          "description": "Maximum length of a game in moves. If None, the games will always run to the natural end.\n Beware that for some games (e.g., Chess) this parameter is essential to avoid infinite games.",
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint64",
+          "default": null,
+          "minimum": 0
+        },
+        "move_selection": {
+          "$ref": "#/$defs/MoveSelectionSettings",
+          "default": {
+            "temperature": 1.0,
+            "zero_temp_move_count": 40
+          }
+        },
+        "rollouts": {
+          "$ref": "#/$defs/RolloutSettings",
+          "default": {
+            "full_iterations": 200,
+            "full_search_prob": 1.0,
+            "part_cpuct_exploration": 1.0,
+            "part_iterations": 20
+          }
+        },
+        "search_fpu_child": {
+          "$ref": "#/$defs/ConfigFpuMode",
+          "default": {
+            "type": "Relative",
+            "relative": 0.20000000298023224
+          }
+        },
+        "search_fpu_root": {
+          "$ref": "#/$defs/ConfigFpuMode",
+          "default": {
+            "type": "Fixed",
+            "fixed": 0.0
+          }
+        },
+        "search_policy_temperature_child": {
+          "type": "number",
+          "format": "float",
+          "default": 1.0
+        },
+        "search_policy_temperature_root": {
+          "type": "number",
+          "format": "float",
+          "default": 1.399999976158142
+        },
+        "uct": {
+          "$ref": "#/$defs/UctSettings",
+          "default": {
+            "exploration_weight": 4.0,
+            "moves_left_clip": 20.0,
+            "moves_left_sharpness": 0.5,
+            "moves_left_weight": 0.029999999329447746
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "dirichlet",
+        "contempt"
+      ]
+    },
+    "TrainingConfig": {
+      "type": "object",
+      "properties": {
+        "batch_size": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "epochs": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "learning_rate": {
+          "type": "number",
+          "format": "float"
+        },
+        "number_of_aux_features": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "policy_loss_weight": {
+          "type": "number",
+          "format": "float"
+        },
+        "q_value_loss_weight": {
+          "type": "number",
+          "format": "float"
+        },
+        "samples": {
+          "description": "How many samples to keep in the training buffer (and save to disk).",
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0
+        },
+        "warmup_steps": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0
+        },
+        "weight_decay": {
+          "type": "number",
+          "format": "float"
+        },
+        "z_value_loss_weight": {
+          "type": "number",
+          "format": "float"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "samples",
+        "batch_size",
+        "epochs",
+        "learning_rate",
+        "weight_decay",
+        "policy_loss_weight",
+        "z_value_loss_weight",
+        "q_value_loss_weight",
+        "number_of_aux_features",
+        "warmup_steps"
+      ]
+    },
+    "UctSettings": {
+      "type": "object",
+      "properties": {
+        "exploration_weight": {
+          "type": "number",
+          "format": "float",
+          "default": 4.0
+        },
+        "moves_left_clip": {
+          "type": "number",
+          "format": "float",
+          "default": 20.0
+        },
+        "moves_left_sharpness": {
+          "type": "number",
+          "format": "float",
+          "default": 0.5
+        },
+        "moves_left_weight": {
+          "type": "number",
+          "format": "float",
+          "default": 0.029999999329447746
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

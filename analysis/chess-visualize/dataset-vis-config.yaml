@@ -1,0 +1,4 @@
+# $schema: ./dataset-viewer.schema.json
+# yaml-language-server: $schema=./dataset-viewer.schema.json
+
+parquet_path: "./testing/249.parquet"

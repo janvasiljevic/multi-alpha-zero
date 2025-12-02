@@ -1,0 +1,32 @@
+[package]
+name = "game-tri-chess"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = { version = "0.2.100", optional = true }
+console_error_panic_hook = { version = "0.1.7", optional = true }
+
+serde = { workspace = true, optional = true }
+schemars = { workspace = true, optional = true }
+
+[features]
+wasm = ["wasm-bindgen", "console_error_panic_hook"]
+serde_support = ["serde", "schemars"]
+
+[dev-dependencies]
+rand.workspace = true
+sha2 = "0.10.8"
+rayon = "1.10.0"
+criterion = "0.7.0"
+
+[[bin]]
+name = "python-coords"
+path = "src/bin/generate_python_coord.rs"
+
+[[bench]]
+name = "attack_generation_bench"
+harness = false

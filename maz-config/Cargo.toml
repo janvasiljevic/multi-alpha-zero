@@ -1,0 +1,16 @@
+[package]
+name = "maz-config"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+serde.workspace = true
+serde_yaml.workspace = true
+tracing.workspace = true
+schemars.workspace = true
+strum = "0.27"
+strum_macros = "0.27"
+
+[[bin]]
+name = "generate-schema"
+path = "src/bin/generate_schema.rs"

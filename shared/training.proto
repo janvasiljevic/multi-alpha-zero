@@ -1,0 +1,105 @@
+syntax = "proto3";
+
+package training;
+
+message SetSettingsRequest {
+    string base_directory = 1;
+
+    uint64 max_samples = 2;
+
+    uint64 batch_size = 3;
+
+    float learning_rate = 4;
+
+    string model_key = 5;
+
+    uint64 current_training_step = 6;
+
+    float weight_decay = 7;
+
+    float policy_loss_weight = 8;
+
+    float z_value_loss_weight = 9;
+
+    float q_value_loss_weight = 10;
+
+    uint64 num_of_aux_features = 11;
+
+    uint64 warmup_steps = 12;
+}
+
+message InitialSettingsResponse {
+    // The path to the ONNX model file that will be used for training.
+    string model_path = 1;
+}
+
+message TrainingSamplesUpdate {
+    /// Where the samples are stored.
+    string parquet_file_path = 1;
+}
+
+message SendTrainingDataRequest {
+    TrainingSamplesUpdate update = 1;
+}
+
+message SendTrainingDataResponse {
+    uint64 samples_loaded_in_stream = 1;
+    uint64 total_samples_in_memory = 2;
+}
+
+message TrainModelRequest {
+    uint32 epochs = 1;
+    uint32 batch_size = 2;
+}
+
+// Response after training is complete.
+message TrainModelResponse {
+    bool success = 1;
+    // The path to the ONNX model file that was trained.
+    string new_model_path = 2;
+
+    // How long the training took in seconds.
+    float duration_seconds = 3;
+
+    // The total number of training steps completed.
+    uint64 total_training_steps = 4;
+}
+
+message TensorboardScalarRequest {
+    string tag = 1;
+    float value = 2;
+    uint64 step = 3;
+}
+
+message TensorboardHistogramRequest {
+    string tag = 1;
+    repeated float values = 2;
+    uint64 step = 3;
+}
+
+message TensorboardMultipleScalarsRequest {
+    string tag = 1;
+    map<string, float> values = 2;
+    uint64 step = 3;
+}
+
+message TensorboardResponse {
+    bool success = 1;
+}
+
+// Python server could easily be just a script, but it's
+// easier to use gRPC for documentation and performance (no startup overhead, especially when importing loads
+// of libraries + we can keep sample data in memory).
+service TrainingCoordinator {
+    rpc SetInitialSettings (SetSettingsRequest) returns (InitialSettingsResponse);
+
+    rpc SendTrainingData (stream SendTrainingDataRequest) returns (SendTrainingDataResponse);
+
+    rpc TrainModel (TrainModelRequest) returns (TrainModelResponse);
+
+    rpc TensorboardScalar (TensorboardScalarRequest) returns (TensorboardResponse);
+
+    rpc TensorboardMultipleScalars (TensorboardMultipleScalarsRequest) returns (TensorboardResponse);
+
+    rpc TensorboardHistogram (TensorboardHistogramRequest) returns (TensorboardResponse);
+}

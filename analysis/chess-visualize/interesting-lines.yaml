@@ -1,0 +1,33 @@
+poses:
+  - name: complex_pos
+    fen: 2kr2nr/pp1qp1pb/2ppp3/n6p/X/X X/r1bq1knr/2p1ppp1/2n5/pp5p/8/2b5/8/8 8/8/8/1p6/X/r1b2knr/pp2pqp1/2p2pb1/n2p4 W ------ --4 0 10
+    moves:
+      - Bk2-h8
+      - Be12xc10
+      - Ra11-c9 #
+      - Kf4-e4 # White doesn't want to take, because then he and grey are both worse than black!
+      - Bc10xe9 # Grey takes, the bishop is protected by White Queen and Knight!
+  - name: branch
+    fen: 2kr2nr/pp1qp1p1/2ppp3/n6p/8/8/8/4b3/X X/r1bq1knr/2p1ppp1/2n5/pp5p/8/6b1/8/8 8/8/8/1p6/X/r1b2kn1/pp2pq2/2p2pbr/n2p4 W ------ --- 1 11
+    moves:
+      - Qg5-e6
+  - name: why_not_take
+    fen: r1bq1k1r/3ppp1p/8/7p/8/2b5/3n4/8/8/8/8/7p 8/8/8/4n3/r2q2nr/pp2kpp1/8/4p2p/8/8/8/4b3 8/2b5/8/8/X/r1bq4/ppp2p1k/3p3r/n5p1 G ------ --- 0 11
+    moves:
+      - Ql7xl6
+      - Qd12-h4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

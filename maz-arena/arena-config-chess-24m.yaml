@@ -1,0 +1,45 @@
+# $schema: ./arena-config.schema.json
+# yaml-language-server: $schema=./arena-config.schema.json
+# This config is meant for local testing on the Mac M2 for development purposes.
+
+sessions_per_gpu: 5
+configs:
+  - game: Chess
+    out_file: ./maz-arena/results/chess_24m_vs_itself.csv
+    games_per_matchup: 3
+    config_unique_name: chess_24m_vs_itself
+    mcts_rollouts_per_move: 33
+    initial_elo: 25.0
+    players:
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_50.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_80.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_110.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_140.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_170.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_200.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_230.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_260.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_290.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_320.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_350.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_380.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_410.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_440.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_470.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Chess24m/Chess24m_500.onnx"

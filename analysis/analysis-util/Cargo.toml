@@ -1,0 +1,19 @@
+[package]
+name = "analysis-util"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+game-tri-chess.workspace = true
+
+parquet.workspace = true
+arrow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+
+svg = "0.18.0"
+usvg = { version = "0.45.1", features = ["fontdb", "text"] }
+fontdb = "0.23.0"
+svg2pdf = "0.13.0"
+roxmltree = "0.20.0"
+lazy_static = "1.5.0" # Add this for parsing piece SVGs

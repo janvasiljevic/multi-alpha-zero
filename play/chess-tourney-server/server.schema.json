@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ServerConfig",
+  "type": "object",
+  "properties": {
+    "database_file_path": {
+      "type": "string",
+      "default": "./sqlite.db"
+    },
+    "host": {
+      "type": "string",
+      "default": "0.0.0.0"
+    },
+    "onnx_models": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/OnnxModel"
+      }
+    },
+    "port": {
+      "type": "integer",
+      "format": "uint16",
+      "default": 3000,
+      "maximum": 65535,
+      "minimum": 0
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "onnx_models"
+  ],
+  "$defs": {
+    "OnnxModel": {
+      "type": "object",
+      "properties": {
+        "file_path": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "file_path",
+        "key"
+      ]
+    }
+  }
+}

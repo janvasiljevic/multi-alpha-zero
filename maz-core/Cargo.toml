@@ -1,0 +1,35 @@
+[package]
+name = "maz-core"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+game-tri-chess.workspace = true
+game-hex.workspace = true
+oracle-tri-chess.workspace = true
+
+ort.workspace = true
+ndarray.workspace = true
+rand.workspace = true
+ahash.workspace = true
+urlencoding = "2.1.3"
+colored.workspace = true
+tracing.workspace = true
+rand_distr.workspace = true
+
+[dev-dependencies]
+criterion = { version = "0.7.0", features = ["html_reports"] }
+
+[[bench]]
+# cargo bench --bench ahash
+name = "ahash"
+harness = false
+
+[[bench]]
+# cargo bench --bench domain_mapper_encoding
+name = "domain_mapper_encoding"
+harness = false
+
+[[bin]]
+name = "python-coords"
+path = "src/bin/generate_python_coord_hex.rs"

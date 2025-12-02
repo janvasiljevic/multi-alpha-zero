@@ -1,0 +1,105 @@
+# $schema: ./arena-config.schema.json
+# yaml-language-server: $schema=./arena-config.schema.json
+# This config is meant for local testing on the Mac M2 for development purposes.
+
+sessions_per_gpu: 3
+configs:
+  - game: Hex
+    out_file: ./maz-arena/results/hex_abs_vs_itself.csv
+    games_per_matchup: 5
+    config_unique_name: hex_abs_vs_itself
+    mcts_rollouts_per_move: 150
+    initial_elo: 25.0
+    players:
+      - type: Random
+        unique_name: RandomPlayer
+      - type: Mcts
+        unique_name: Mcts_3200
+        num_of_playouts: 3200
+      - type: Mcts
+        unique_name: Mcts_12800
+        num_of_playouts: 12800
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Hex5Abs/Hex5Abs_20.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Hex5Abs/Hex5Abs_35.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Hex5Abs/Hex5Abs_50.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Hex5Abs/Hex5Abs_65.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Hex5Abs/Hex5Abs_80.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Hex5Abs/Hex5Abs_95.onnx"
+      - type: AlphaZeroPlayer
+        onnx_path: "./testing/arena/Hex5Abs/Hex5Abs_110.onnx"
+
+  # - game: Hex
+  #   config_unique_name: hex_abs_vs_itself
+  #   out_file: ./maz-arena/results/hex_abs_vs_itself.csv
+  #   games_per_matchup: 5
+  #   models:
+  #     - "./testing/arena/Hex5Abs/Hex5Abs_20.onnx"
+  #     - "./testing/arena/Hex5Abs/Hex5Abs_35.onnx"
+  #     - "./testing/arena/Hex5Abs/Hex5Abs_50.onnx"
+  #     - "./testing/arena/Hex5Abs/Hex5Abs_65.onnx"
+  #     - "./testing/arena/Hex5Abs/Hex5Abs_80.onnx"
+  #     - "./testing/arena/Hex5Abs/Hex5Abs_95.onnx"
+  #     - "./testing/arena/Hex5Abs/Hex5Abs_110.onnx"
+  #   initial_elo: 25.0
+  #   mcts_rollouts_per_move: 100
+
+  # - game: Hex
+  #   config_unique_name: hex_abs_vs_canon
+  #   out_file: ./maz-arena/results/hex_abs_vs_canon.csv
+  #   games_per_matchup: 5
+  #   models:
+  #     - "./testing/arena/Hex5Abs/Hex5Abs_20.onnx"
+  #     - "./testing/arena/Hex5Abs/Hex5Abs_50.onnx"
+  #     - "./testing/arena/Hex5Abs/Hex5Abs_80.onnx"
+  #     - "./testing/arena/Hex5Abs/Hex5Abs_110.onnx"
+
+  #     - "./testing/arena/Hex5Canon/Hex5Canon_20.onnx"
+  #     - "./testing/arena/Hex5Canon/Hex5Canon_50.onnx"
+  #     - "./testing/arena/Hex5Canon/Hex5Canon_80.onnx"
+  #     - "./testing/arena/Hex5Canon/Hex5Canon_110.onnx"
+  #   initial_elo: 25.0
+  #   mcts_rollouts_per_move: 100
+
+  # - game: Hex
+  #   config_unique_name: hex_canon_vs_axiom
+  #   out_file: ./maz-arena/results/hex_canon_vs_axiom.csv
+  #   games_per_matchup: 5
+  #   models:
+  #     - "./testing/arena/Hex5Canon/Hex5Canon_20.onnx"
+  #     - "./testing/arena/Hex5Canon/Hex5Canon_50.onnx"
+  #     - "./testing/arena/Hex5Canon/Hex5Canon_80.onnx"
+  #     - "./testing/arena/Hex5Canon/Hex5Canon_110.onnx"
+  #     - "./testing/arena/Hex5Canon/Hex5Canon_140.onnx"
+
+  #     - "./testing/arena/Hex5Axiom/Hex5Axiom_20.onnx"
+  #     - "./testing/arena/Hex5Axiom/Hex5Axiom_50.onnx"
+  #     - "./testing/arena/Hex5Axiom/Hex5Axiom_80.onnx"
+  #     - "./testing/arena/Hex5Axiom/Hex5Axiom_110.onnx"
+  #     - "./testing/arena/Hex5Axiom/Hex5Axiom_140.onnx"
+  #   initial_elo: 25.0
+  #   mcts_rollouts_per_move: 100
+
+#  - game: Hex
+#    config_unique_name: hex_axiom_vs_bert
+#    out_file: ./maz-arena/results/hex_axiom_vs_bert.csv
+#    games_per_matchup: 5
+#    models:
+#      - "./testing/arena/Hex5Axiom/Hex5Axiom_20.onnx"
+#      - "./testing/arena/Hex5Axiom/Hex5Axiom_50.onnx"
+#      - "./testing/arena/Hex5Axiom/Hex5Axiom_80.onnx"
+#      - "./testing/arena/Hex5Axiom/Hex5Axiom_110.onnx"
+#      - "./testing/arena/Hex5Axiom/Hex5Axiom_140.onnx"
+#
+#      - "./testing/arena/Hex5Bert/Hex5Bert_20.onnx"
+#      - "./testing/arena/Hex5Bert/Hex5Bert_50.onnx"
+#      - "./testing/arena/Hex5Bert/Hex5Bert_80.onnx"
+#      - "./testing/arena/Hex5Bert/Hex5Bert_110.onnx"
+#      - "./testing/arena/Hex5Bert/Hex5Bert_140.onnx"
+#    initial_elo: 25.0
+#    mcts_rollouts_per_move: 200
